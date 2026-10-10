@@ -4,6 +4,8 @@
 
 [![License: LGPL-3](https://img.shields.io/badge/License-LGPL--3-green.svg)](https://www.gnu.org/licenses/lgpl-3.0.html)
 
+> **Notice:** Developed as part of a functional demonstration case study for *Milima Hardware & Building Supplies Ltd*. All company names and test data are fictional for evaluation purposes.
+
 ---
 
 ## 1. Business Context & Problem

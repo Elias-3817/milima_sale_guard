@@ -1,8 +1,7 @@
 # Milima Sale Guard (`milima_sale_guard`)
 
-**Odoo 19 / 20 Module: Enforcing Mandatory KRA PIN for Kenyan Sales Orders**
+**Odoo Module: Enforcing Mandatory KRA PIN for Kenyan Sales Orders**
 
-[![Odoo Version](https://img.shields.io/badge/Odoo-19.0%20%7C%2020.0-blue.svg)](https://www.odoo.com)
 [![License: LGPL-3](https://img.shields.io/badge/License-LGPL--3-green.svg)](https://www.gnu.org/licenses/lgpl-3.0.html)
 
 ---

@@ -65,7 +65,62 @@ python3 odoo-bin -c odoo.conf -d milima_test -i milima_sale_guard --test-enable 
 
 ---
 
-## 5. Author
+## 5. Run It Locally with Docker
+
+1. Put this `docker-compose.yml` in the folder that **contains** `milima_sale_guard/`:
+
+```yaml
+services:
+  db:
+    image: postgres:16
+    environment:
+      POSTGRES_USER: odoo
+      POSTGRES_PASSWORD: odoo
+      POSTGRES_DB: postgres
+    volumes:
+      - db-data:/var/lib/postgresql/data
+
+  odoo:
+    image: odoo:19
+    depends_on:
+      - db
+    ports:
+      - "8069:8069"
+    environment:
+      HOST: db
+      USER: odoo
+      PASSWORD: odoo
+    volumes:
+      - ./milima_sale_guard:/mnt/extra-addons/milima_sale_guard:ro
+      - odoo-data:/var/lib/odoo
+
+volumes:
+  db-data:
+  odoo-data:
+```
+
+2. Create a database with Sales, Kenya localization and the add-on installed:
+
+```bash
+docker compose up -d db
+docker compose run --rm odoo odoo -d milima -i sale_management,l10n_ke,milima_sale_guard --stop-after-init
+```
+
+3. Start Odoo and open http://localhost:8069 (login `admin` / `admin`):
+
+```bash
+docker compose up -d
+```
+
+4. Run the tests:
+
+```bash
+docker compose run --rm odoo odoo -d milima -u milima_sale_guard --test-tags /milima_sale_guard --stop-after-init
+```
+
+5. Stop it with `docker compose down` (add `-v` to wipe the database).
+
+---
+
+## 6. Author
 **Elias Maina** -- Nairobi, Kenya  
-
-

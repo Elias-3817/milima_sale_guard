@@ -66,5 +66,6 @@ python3 odoo-bin -c odoo.conf -d milima_test -i milima_sale_guard --test-enable 
 ---
 
 ## 5. Author
-**Elias Maina** — Nairobi, Kenya  
-Functional & Technical Odoo Consultant
+**Elias Maina** -- Nairobi, Kenya  
+
+
